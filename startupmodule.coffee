@@ -6,14 +6,14 @@ log = (arg) ->
     return
 
 ############################################################
-bot = null
+# bot = null
 sci = null
 intelligence = null
 
 ############################################################
 startupmodule.initialize = ->
     log "startupmodule.initialize"
-    bot = allModules.telegrambotmodule
+    # bot = allModules.telegrambotmodule
     sci = allModules.scimodule
     intelligence = allModules.intelligencemodule
     return
@@ -24,7 +24,7 @@ startupmodule.serviceStartup = ->
     try
         sci.prepareAndExpose()
         intelligence.startProcessing()
-    catch err then bot.send(err.stack)
+    catch err then console.log err.stack
     return
 
 export default startupmodule
