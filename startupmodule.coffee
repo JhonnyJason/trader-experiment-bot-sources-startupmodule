@@ -11,7 +11,7 @@ sci = null
 intelligence = null
 
 ############################################################
-startupmodule.initialize = ->
+export initialize = ->
     log "startupmodule.initialize"
     bot = allModules.telegrambotmodule
     sci = allModules.scimodule
@@ -19,7 +19,7 @@ startupmodule.initialize = ->
     return
 
 ############################################################
-startupmodule.serviceStartup = ->
+export serviceStartup = ->
     log "startupmodule.serviceStartup"
     try
         sci.prepareAndExpose()
@@ -27,4 +27,3 @@ startupmodule.serviceStartup = ->
     catch err then bot.send(err.stack)
     return
 
-export default startupmodule
